@@ -1,12 +1,8 @@
 GitHub Practice
 ===
 
-練習用リポジトリ
+Repository for practice
 
 ## Description
 
-いろいろ試す
-
-_kowai_
-
-hoge
+Try variously
