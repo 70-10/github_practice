@@ -3,19 +3,18 @@ machine:
   node:
     version: 6.2.0
 
-# dependencies:
-#   pre:
-#   post:
-#       - cc-npm-update
-#       - npm run post-dependencies
+dependencies:
+  pre:
+    - npm run build
+  # post:
+  #     - cc-npm-update
+  #     - npm run post-dependencies
 deployment:
   publish:
     branch: master
     commands:
       - git config --global user.name 'CircleCI'
       - git config --global user.email 'circleci@cureapp.jp'
-      - npm install
-      - npm run build
       - mv dist /tmp/release
       - git checkout -t origin/gh-pages
       - git clean -dxf

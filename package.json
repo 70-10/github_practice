@@ -6,7 +6,7 @@
   "dependencies": {},
   "devDependencies": {},
   "scripts": {
-    "build": "echo 'build'"
+    "build": "mkdir dist && echo 'hello, practice' > dist/index.html"
   },
   "repository": {
     "type": "git",
