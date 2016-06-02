@@ -1,27 +1,36 @@
-general:
-    branches:
-        ignore:
-            - gh-pages
-            - /release.*/
 machine:
-    environment:
-        PATH: '$PATH:$HOME/$CIRCLE_PROJECT_REPONAME/node_modules/node-circleci-autorelease/bin'
-        VERSION_PREFIX: v
-        GH_PAGES_DIR: doc
-    pre:
-        - git config --global user.name 'CircleCI'
-        - git config --global user.email 'circleci@cureapp.jp'
-dependencies:
-    post:
-        - cc-npm-update
-        - npm run post-dependencies
+  timezone: Asia/Tokyo
+  node:
+    version: 6.2.0
+
+# dependencies:
+#   pre:
+#   post:
+#       - cc-npm-update
+#       - npm run post-dependencies
 deployment:
-    create_release_branch:
-        branch:
-            - master
-        commands:
-            - cc-prepare-for-release && npm run pre-release && cc-release || cc-not-released
-            - cc-gh-pages
+  publish:
+    branch: master
+    commands:
+      - git config --global user.name 'CircleCI'
+      - git config --global user.email 'circleci@cureapp.jp'
+      - npm install
+      - npm run build
+      - mv dist /tmp/release
+      - git checkout -t origin/gh-pages
+      - git clean -dxf
+      - git rm $(git ls-files)
+      - cp -r /tmp/release/* .
+      - |
+        cat <<EOF > ./circle.yml
+        general:
+          branches:
+            ignore:
+              - gh-pages
+        EOF
+      - git add -A
+      - git commit -m "release at $(date +'%Y.%m.%d %H:%M:%S')" --allow-empty
+      - git push origin gh-pages
 
 test:
   override:

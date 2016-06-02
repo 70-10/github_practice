@@ -3,19 +3,10 @@
   "version": "0.1.0",
   "description": "GitHub Practice ===",
   "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "bmp": "cc-bmp",
-    "bmp-p": "cc-bmp -p",
-    "bmp-m": "cc-bmp -m",
-    "bmp-j": "cc-bmp -j",
-    "bmp-r": "cc-bmp -r",
-    "circle": "cc-generate-yml",
-    "post-dependencies": "echo post-dependencies",
-    "pre-release": "echo pre-release",
-    "post-release": "echo post-release",
-    "release": "cc-local-release",
-    "gh-pages": "echo gh-pages"
+    "build": "echo 'build'"
   },
   "repository": {
     "type": "git",
@@ -27,20 +18,5 @@
   "bugs": {
     "url": "https://github.com/70-10/github_practice/issues"
   },
-  "homepage": "https://github.com/70-10/github_practice#readme",
-  "node-circleci-autorelease": {
-    "config": {
-      "git-user-name": "CircleCI",
-      "git-user-email": "circleci@cureapp.jp",
-      "version-prefix": "v",
-      "create-branch": false,
-      "create-gh-pages": true,
-      "gh-pages-dir": "dist",
-      "npm-shrinkwrap": false,
-      "npm-update-depth": false
-    }
-  },
-  "devDependencies": {
-    "node-circleci-autorelease": "1.7.1"
-  }
+  "homepage": "https://github.com/70-10/github_practice#readme"
 }
