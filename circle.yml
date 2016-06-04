@@ -4,11 +4,9 @@ machine:
     version: 6.2.0
 
 dependencies:
-  pre:
+  post:
     - npm run build
-  # post:
-  #     - cc-npm-update
-  #     - npm run post-dependencies
+
 deployment:
   publish:
     branch: master
