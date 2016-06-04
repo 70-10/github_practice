@@ -16633,7 +16633,28 @@ webpackJsonp([1],[
 	                    )
 	                  )
 	                ),
-	                _react2.default.createElement("div", { className: "nav-right" })
+	                _react2.default.createElement(
+	                  "div",
+	                  { className: "nav-right" },
+	                  _react2.default.createElement(
+	                    "div",
+	                    { className: "nav-item" },
+	                    _react2.default.createElement(
+	                      "a",
+	                      { href: "https://github.com/70-10/github_practice", className: "button is-dark is-outlined" },
+	                      _react2.default.createElement(
+	                        "span",
+	                        { className: "icon" },
+	                        _react2.default.createElement("i", { className: "fa fa-github" })
+	                      ),
+	                      _react2.default.createElement(
+	                        "span",
+	                        null,
+	                        "GitHub"
+	                      )
+	                    )
+	                  )
+	                )
 	              )
 	            )
 	          ),
