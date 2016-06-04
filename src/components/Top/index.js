@@ -17,7 +17,16 @@ export default class Top extends Component {
                     <h2 className="subtitle">GitHub Practice</h2>
                   </div>
                 </div>
-                <div className="nav-right"></div>
+                <div className="nav-right">
+                  <div className="nav-item">
+                    <a href="https://github.com/70-10/github_practice" className="button is-dark is-outlined">
+                      <span className="icon">
+                        <i className="fa fa-github"></i>
+                      </span>
+                      <span>GitHub</span>
+                    </a>
+                  </div>
+                </div>
               </div>
             </header>
           </div>
